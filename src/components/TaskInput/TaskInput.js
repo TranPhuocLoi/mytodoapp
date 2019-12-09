@@ -41,7 +41,8 @@ export default class componentName extends Component {
             <div className="form-group col-6">
               <input
                 name="deadTask"
-                type="text"
+                type="date"
+                defaultValue="2011-08-19"
                 className="form-control"
                 id="inputdate"
                 placeholder="Input your deadline..."
