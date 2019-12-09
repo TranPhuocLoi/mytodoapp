@@ -22,8 +22,13 @@ export default class ListItem extends Component {
     this.props.updateTitle(this.props.id, this.refs.valueInput.value);
   }
 
+  // doubleEvent = () => {
+  //   this.handleUpdateTitle();
+  //   this.toggleShowHide();
+  // }
+
   showSave = () => (
-    <form className="input-group" onSubmit={this.handleUpdateTitle}>
+    <div className="input-group" onChange={this.handleUpdateTitle}>
       <input
         type="text"
         ref="valueInput"
@@ -33,8 +38,8 @@ export default class ListItem extends Component {
         id="inputPassword2"
         placeholder="Edit task here..."
       />
-      <button type="submit" className="btn btn-info" onClick={this.toggleShowHide}  >Save</button>
-    </form>
+      <button type="submit" className="btn btn-info" onClick={this.toggleShowHide} >Save</button>
+    </div>
   )
 
   showEdit = () => (
@@ -54,7 +59,6 @@ export default class ListItem extends Component {
     event.stopPropagation();
     this.setState({ isEnable: !this.state.isEnable });
   }
-
 
   render() {
     const { id, title, deadline, done } = this.props;
